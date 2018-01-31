@@ -1,10 +1,11 @@
 package com.example.baguette.rxbindingkotlinsample
 
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.example.baguette.rxbindingkotlinsample.databinding.ActivityMainBinding
 import com.jakewharton.rxbinding.widget.RxTextView
+
 
 class MainActivity : AppCompatActivity() {
 

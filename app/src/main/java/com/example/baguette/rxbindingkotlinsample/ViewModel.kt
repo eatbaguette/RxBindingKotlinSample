@@ -1,6 +1,7 @@
 package com.example.baguette.rxbindingkotlinsample
 
 import jp.keita.kagurazaka.rxproperty.ReadOnlyRxProperty
+import jp.keita.kagurazaka.rxproperty.toRxProperty
 
 /**
  * Created by monkey on 2018/01/31.
