@@ -20,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
@@ -30,4 +33,18 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    kapt 'com.android.databinding:compiler:2.2.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:1.0.0'
+    compile 'io.reactivex:rxjava:1.2.3'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+
+    compile 'com.github.k-kagurazaka.rx-property-android:rx-property:4.0.0'
+    // If you want to use Kotlin syntax
+    compile 'com.github.k-kagurazaka.rx-property-android:rx-property-kotlin:4.0.0'
 }
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
