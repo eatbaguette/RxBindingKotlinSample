@@ -1,12 +1,14 @@
 package com.example.baguette.rxbindingkotlinsample
 
 import jp.keita.kagurazaka.rxproperty.ReadOnlyRxProperty
-import jp.keita.kagurazaka.rxproperty.toRxProperty
+import jp.keita.kagurazaka.rxproperty.toReadOnlyRxProperty
+import rx.Observable
+
 
 /**
  * Created by monkey on 2018/01/31.
  */
-class ViewModel(textChangeStream: rx.Observable<CharSequence>) {
+class ViewModel(textChangeStream: io.reactivex.Observable<CharSequence>) {
     val text: ReadOnlyRxProperty<String>
 
     val upperCase: ReadOnlyRxProperty<String>
@@ -19,16 +21,15 @@ class ViewModel(textChangeStream: rx.Observable<CharSequence>) {
 
         text = textStream
                 .map(CharSequence::toString)
-                .toRxProperty()
+                .toReadOnlyRxProperty()
+
 
         upperCase = textStream
                 .map(CharSequence::toString)
-                .map { it.toUpperCase() }
-                .toRxProperty()
+                .toReadOnlyRxProperty()
 
         fileterI = textStream
                 .map(CharSequence::toString)
-                .map { it.replace("apple", "", ignoreCase = true) }
-                .toRxProperty()
+                .toReadOnlyRxProperty()
     }
 }
